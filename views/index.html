@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block main %}
+<div class="container">
+    我是内容
+    <form action="/signin" method="post">
+        <p>Name: <input name="name" value="koa"></p>
+        <p>Password: <input name="password" type="password"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</div>
+{% endblock %}

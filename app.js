@@ -2,10 +2,11 @@ const Koa = require('koa');
 
 const bodyParser = require('koa-bodyparser');
 
-// ����controller middleware:
-const controller = require('./controller');
-
+// 模板引擎
 const templating = require('./templating');
+
+// 路由控制
+const controller = require('./controller');
 
 const app = new Koa();
 
@@ -15,22 +16,20 @@ app.use(async (ctx, next) => {
     await next();
 });
 
+// parse request body:
 app.use(bodyParser());
 
+// 判断当前环境
 const isProduction = process.env.NODE_ENV === 'production';
 
+// 引入模板引擎
 app.use(templating('views', {
     noCache: !isProduction,
     watch: !isProduction
 }));
 
-// add router middleware:
+// add controllers:
 app.use(controller());
-
-/*if (!isProduction) {
-    let staticFiles = require('./static-files');
-    app.use(staticFiles('/static/', __dirname + '/static'));
-}*/
 
 app.listen(3000);
 console.log('app started at port 3000...');

@@ -23,17 +23,17 @@ function createEnv(path, opts) {
 }
 
 function templating(path, opts) {
-    // 创建Nunjucks的env对象:templating
+    // 鍒涘缓Nunjucks鐨別nv瀵硅薄:templating
     var env = createEnv(path, opts);
     return async (ctx, next) => {
-        // 给ctx绑定render函数:
+        // 缁檆tx缁戝畾render鍑芥暟:
         ctx.render = function (view, model) {
-            // 把render后的内容赋值给response.body:
+            // 鎶妑ender鍚庣殑鍐呭璧嬪�肩粰response.body:
             ctx.response.body = env.render(view, Object.assign({}, ctx.state || {}, model || {}));
-            // 设置Content-Type:
+            // 璁剧疆Content-Type:
             ctx.response.type = 'text/html';
         };
-        // 继续处理请求:
+        // 缁х画澶勭悊璇锋眰:
         await next();
     };
 }
