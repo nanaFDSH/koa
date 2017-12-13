@@ -27,6 +27,8 @@ https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3
 
 so easy
 
+![image](https://www.hijs.cc/img/koa.png)
+
 # 本案例 koa2+node9.2.1+koa-router+Nunjucks
 
 下载本项目到本地
