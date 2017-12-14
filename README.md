@@ -36,6 +36,10 @@ so easy
 
 ![image](https://www.hijs.cc/img/QQ%BD%D8%CD%BC20171214180031.png)
 
+效果
+
+![image](https://www.hijs.cc/img/QQ%CD%BC%C6%AC20171214182356.png)
+
 首页装了mysql 在本地建数据库 koa 表 list users
 
 这个可自行发挥 也可链接自己服务器
