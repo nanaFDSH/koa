@@ -1,4 +1,4 @@
-# koa-Nunjucks
+# koa
 
  Koa -- 基于 Node.js 平台的下一代 web 开发框架
 
@@ -32,7 +32,27 @@ so easy
 
 ![image](https://www.hijs.cc/img/koa.png)
 
-# 本案例 koa2+node9.2.1+koa-router+Nunjucks
+加了数据库配置
+
+![image](https://www.hijs.cc/img/QQ%BD%D8%CD%BC20171214180031.png)
+
+首页装了mysql 在本地建数据库 koa 表 list users
+
+这个可自行发挥 也可链接自己服务器
+
+``` javascript
+var config = {
+    dialect: 'mysql',
+    database: 'koa',
+    username: 'root',
+    password: '123456',
+    host: '127.0.0.1',
+    port: 3306
+};
+
+module.exports = config;
+``` javascript
+
 
 下载本项目到本地
 
