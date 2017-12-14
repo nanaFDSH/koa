@@ -1,6 +1,5 @@
 // config files:
 const defaultConfig = './config-default.js';   // 存储默认的配置；
-const overrideConfig = './config-override.js'; // 存储特定的配置；
 const testConfig = './config-test.js';  // 存储用于测试的配置。
 
 const fs = require('fs');

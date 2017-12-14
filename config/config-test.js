@@ -1,9 +1,10 @@
+
 var config = {
     dialect: 'mysql',
-    database: 'test',
-    username: 'www',
-    password: 'www',
-    host: 'localhost',
+    database: 'koa',
+    username: 'root',
+    password: '123456',
+    host: '127.0.0.1',
     port: 3306
 };
 
