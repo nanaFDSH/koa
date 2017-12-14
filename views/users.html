@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block main %}
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>名字</th>
+            <th>密码</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in data %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.password }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -5,20 +5,53 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="learn javascript by www.liaoxuefeng.com">
     <title>{{ title }}</title>
+    <script src="/static/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <style>
+        body {
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        .footer{
+            flex: 0;
+            background-color:#ddd;
+            padding: 20px 0;
+        }
+        .navbar{
+            background: #20a0ff;
+            color: #fff;
+        }
+        .navbar-brand{
+            color: #212121;
+        }
+    </style>
 </head>
 <body>
-    <header style="background-color:#ddd; padding: 20px 0;">
-        <div class="container">
-            我是header
-            <a href="/">首页</a>
-            <a href="/hello">hello</a>
+    <div class="content">
+        <div class="navbar navbar-static-top">
+            <div class="container">
+                <nav class="collapse navbar-collapse" id="bs-navbar">
+                    <ul class="nav navbar-nav">
+                        <a href="/" class="navbar-brand">首页</a>
+                        <li><a href="/users">用户表</a></li>
+                        <li><a href="/list">分数表</a></li>
+                        <li><a href="/login">登录</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </header>
-    {% block main %} {% endblock %}
-    <footer style="background-color:#ddd; padding: 20px 0;">
+        {% block main %} {% endblock %}
+    </div>
+
+    <div class="footer">
         <div class="container">
-            我是footer
+            <p>This JavaScript course is created by <a target="_blank" href="http://notes.hijs.cc">土豆-web</a> <a target="_blank" href="https://github.com/nanaFDSH/koa-Nunjucks">GitHub</a>.</p>
         </div>
-    </footer>
+    </div>
 </body>
 </html>

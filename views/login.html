@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="learn javascript by www.liaoxuefeng.com">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="accounts">
+            <h1>SpAdmin</h1>
+        </div>
+        <div class="login">
+            <h4>欢迎登录</h4>
+            <div class="control-group">
+                <div class="controls">
+                    <form class="form-horizontal" action="/login" method="post">
+                        <input type="text" class="form-control" id="inputName" name="name" value="koa" placeholder="请输入用户名">
+                        <input type="password" class="form-control" id="inputPassword" name="password" value="12345" placeholder="请输入密码">
+                        <div>{{msg}}</div>
+                        <div class="">
+                            <button type="submit" class="btn btn-default btn-lg btn-block">登录</button>
+                        </div>
+                        <div class="pull-left">
+                            <a class="fpass" href="#">  忘记密码?  </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-fluid footer">
+            <div class="row-fluid">
+                <div class="span12">
+                    <p class="pull-right"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

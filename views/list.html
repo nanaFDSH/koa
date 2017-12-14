@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block main %}
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>数学</th>
+                <th>语文</th>
+                <th>英语</th>
+                <th>分数</th>
+                <th>电话</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in data %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.mathematics }}</td>
+                <td>{{ user.chinese }}</td>
+                <td>{{ user.english }}</td>
+                <td>{{ user.score }}</td>
+                <td>{{ user.mobile }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
