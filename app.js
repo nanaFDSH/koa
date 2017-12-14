@@ -9,6 +9,8 @@ const controller = require('./controller');
 // 模板引擎
 const templating = require('./templating');
 
+const staticFiles = require('./static-files');
+
 const app = new Koa();
 
 // 常量isProduction，它判断当前环境是否是production环境。如果是，就使用缓存，如果不是，就关闭缓存。
@@ -22,11 +24,8 @@ app.use(async (ctx, next) => {
     await next();
 });
 
-// isProduction为undefined
-if (!isProduction) {
-    let staticFiles = require('./static-files');
-    app.use(staticFiles('/static/', __dirname + '/static'));
-}
+// 静态文件引用
+app.use(staticFiles('/static/', __dirname + '/static'));
 
 // parse request body:
 app.use(bodyParser());
