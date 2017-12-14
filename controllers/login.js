@@ -10,9 +10,7 @@ var signin = async (ctx, next) => {
         password = ctx.request.body.password || '';
     if (name === 'koa' && password === '12345') {
         console.log('signin ok!');
-        ctx.render('index.html', {
-            name: name
-        });
+        ctx.redirect('/index'); // 重定向
     } else {
         console.log('signin failed!');
         ctx.render('login.html', {
