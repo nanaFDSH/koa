@@ -11,10 +11,10 @@ var list = async (ctx, next) => {
         data.push(p)
     }
     // console.log(data)
-    // ctx.response.body=data;
-    ctx.render('list.html', {
-        data: data
-    });
+    ctx.response.body = data;
+    // ctx.render('list.html', {
+    //     data: data
+    // });
 };
 
 module.exports = {

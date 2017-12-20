@@ -1,5 +1,8 @@
 const Koa = require('koa');
 
+const logger = require('koa-logger');
+const koaBody = require('koa-body');
+
 // post get请求 json读取
 const bodyParser = require('koa-bodyparser');
 
@@ -9,9 +12,13 @@ const controller = require('./controller');
 // 模板引擎
 const templating = require('./templating');
 
-const staticFiles = require('./static-files');
-
 const app = new Koa();
+
+app.use(logger());
+
+app.use(koaBody({ multipart: true }));
+
+//app.use(multer());  //上传文件的临时路径，改成自己的
 
 // 常量isProduction，它判断当前环境是否是production环境。如果是，就使用缓存，如果不是，就关闭缓存。
 // 在开发环境下，关闭缓存后，我们修改View，可以直接刷新浏览器看到效果，否则，每次修改都必须重启Node程序，会极大地降低开发效率
@@ -24,8 +31,11 @@ app.use(async (ctx, next) => {
     await next();
 });
 
-// 静态文件引用
-app.use(staticFiles('/static/', __dirname + '/static'));
+// isProduction为undefined
+if (!isProduction) {
+    let staticFiles = require('./static-files');
+    app.use(staticFiles('/static/', __dirname + '/static'));
+}
 
 // parse request body:
 app.use(bodyParser());

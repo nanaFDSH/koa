@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block main %}
+
+<!--<form action="/uploadImg" method="post" enctype="multipart/form-data">-->
+    <!--上传图片koa-body <input type="file" name="file" multiple>-->
+    <!--<input type="submit" value="Upload">-->
+<!--</form>-->
+
+<hr>
+
+<form action="/uploadMulter" method="post" enctype="multipart/form-data">
+    上传图片koa-multer
+    <input type="file" name="file123456">
+    <input type="submit" value="Upload">
+</form>
+
+{% endblock %}
